@@ -12,6 +12,7 @@ services:
       # which you should have in your environment variables.
       # It will be used by hayhooks in chat_with_website pipeline
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
@@ -30,6 +31,8 @@ services:
       # as they are not needed for hayhooks
       - ENABLE_TAGS_GENERATION=false
       - ENABLE_EVALUATION_ARENA_MODELS=false
+    depends_on:
+      - hayhooks
     restart: unless-stopped
 
 volumes:
