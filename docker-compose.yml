@@ -31,6 +31,7 @@ services:
       # as they are not needed for hayhooks
       - ENABLE_TAGS_GENERATION=false
       - ENABLE_EVALUATION_ARENA_MODELS=false
+      - OFFLINE_MODE=true
     depends_on:
       - hayhooks
     restart: unless-stopped
