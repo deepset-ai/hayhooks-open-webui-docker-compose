@@ -36,7 +36,7 @@ class PipelineWrapper(BasePipelineWrapper):
         )
 
         # result["llm"]["replies"][0] is a ChatMessage instance
-        return result["llm"]["replies"][0].text  #
+        return result["llm"]["replies"][0].text
 
     def run_chat_completion(
         self, model: str, messages: list[dict], body: dict
