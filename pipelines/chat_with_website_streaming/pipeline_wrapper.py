@@ -39,7 +39,7 @@ class PipelineWrapper(BasePipelineWrapper):
         return result["llm"]["replies"][0].text  #
 
     def run_chat_completion(
-        self, model: str, messages: List[dict], body: dict
+        self, model: str, messages: list[dict], body: dict
     ) -> Union[str, Generator]:
         log.trace(
             f"Running pipeline with model: {model}, messages: {messages}, body: {body}"
